@@ -24,21 +24,21 @@ const productos = {
       return;
     }
   
-    const precioProducto = productos[producto];
-    let montoIngresado = 0;
+    const pProducto = productos[producto];
+    let mIngresado = 0;
   
     console.log("Ingrese monedas:");
   
-    while (montoIngresado < precioProducto) {
+    while (mIngresado < pProducto) {
       const monto = parseInt(prompt("Ingrese una moneda (10, 50 o 100):"));
       if (![10, 50, 100].includes(monto)) {
         console.log("Moneda inválida. Por favor, ingrese 10, 50 o 100.");
         continue;
       }
-      montoIngresado += monto;
+      mIngresado += monto;
     }
   
-    const vuelto = calcularVuelto(montoIngresado - precioProducto);
+    const vuelto = calcularVuelto(mIngresado - pProducto);
     console.log("Su vuelto:");
     vuelto.forEach(m => console.log(m));
   }
